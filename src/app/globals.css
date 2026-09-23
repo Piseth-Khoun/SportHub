@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/*
+  Design language: "under the floodlights."
+  Grounded in the source data itself — night matches, floodlit courts,
+  riverside pitches — rather than a generic dark-mode default.
+  Two accents only, used with a job each:
+    floodlight (amber) = the one primary action per screen
+    turf (green)        = taxonomy: categories, tags, "saved" state
+*/
+
+:root {
+  --pitch: #0b0f1a;
+  --surface: #141a2c;
+  --surface-raised: #1b2338;
+  --line: #262f4a;
+  --chalk: #f4f1e8;
+  --slate: #8993ad;
+  --floodlight: #ffb627;
+  --floodlight-soft: #ffb62726;
+  --turf: #34c17f;
+  --turf-soft: #34c17f22;
+  --whistle: #ff6b5e;
+
+  --font-display: "Anton", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+@theme inline {
+  --color-pitch: var(--pitch);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--line);
+  --color-chalk: var(--chalk);
+  --color-slate: var(--slate);
+  --color-floodlight: var(--floodlight);
+  --color-floodlight-soft: var(--floodlight-soft);
+  --color-turf: var(--turf);
+  --color-turf-soft: var(--turf-soft);
+  --color-whistle: var(--whistle);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--pitch);
+  color: var(--chalk);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--floodlight);
+  color: var(--pitch);
+}
+
+:focus-visible {
+  outline: 2px solid var(--floodlight);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Thin, styled scrollbar for horizontally-scrolling rails */
+.scroll-rail::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-rail::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+.scroll-rail {
+  scrollbar-color: var(--line) transparent;
+}
+
+/* One deliberate, orchestrated entrance — the floodlights switching on.
+   Applied once, on the hero glow, not scattered across every section. */
+@keyframes floodlight-on {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.floodlight-glow {
+  animation: floodlight-on 1.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floodlight-glow {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
