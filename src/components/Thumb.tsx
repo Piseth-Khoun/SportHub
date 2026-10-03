@@ -22,12 +22,13 @@ export interface ThumbProps {
  */
 export function Thumb({ src, alt, sizes, ratio, priority = false, className, style }: ThumbProps) {
   const [failed, setFailed] = useState(false)
+  const imageSrc = failed ? undefined : src || '/image/thumbnail.png'
   const rootStyle = {
     ...(ratio ? ({ ['--ratio' as string]: ratio } as CSSProperties) : {}),
     ...style,
   }
 
-  if (!src || failed) {
+  if (!imageSrc) {
     return (
       <div
         className={['thumb', 'thumb--empty', className].filter(Boolean).join(' ')}
@@ -42,12 +43,19 @@ export function Thumb({ src, alt, sizes, ratio, priority = false, className, sty
 
   return (
     <div className={['thumb', className].filter(Boolean).join(' ')} style={rootStyle}>
-      {canOptimize(src) ? (
-        <Image src={src} alt={alt || ''} fill sizes={sizes} priority={priority} onError={() => setFailed(true)} />
+      {imageSrc.startsWith('/') || canOptimize(imageSrc) ? (
+        <Image
+          src={imageSrc}
+          alt={alt || ''}
+          fill
+          sizes={sizes}
+          priority={priority}
+          onError={() => setFailed(true)}
+        />
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={src}
+          src={imageSrc}
           alt={alt || ''}
           loading={priority ? 'eager' : 'lazy'}
           decoding="async"

@@ -15,7 +15,7 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://sport-hub.vercel.app')
 const thumbnailImage = {
-  url: '/image.png',
+  url: '/image/thumbnail.png',
   width: 866,
   height: 650,
   alt: `${SITE_NAME} logo`,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   other: {
     'telegram:title': `${SITE_NAME}: sports, venues and events`,
     'telegram:description': siteDescription,
-    'telegram:image': '/image.png',
+    'telegram:image': '/image/thumbnail.png',
   },
 }
 
