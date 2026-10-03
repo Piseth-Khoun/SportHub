@@ -1,0 +1,866 @@
+{
+  "info": {
+    "_postman_id": "0bfa0716-3ca4-4657-ae73-c023cd0f2397",
+    "name": "Sport",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56821471"
+  },
+  "item": [
+    {
+      "name": "Sport",
+      "item": [
+        {
+          "name": "create-sport",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Adidas Training Cones\",\n  \"description\": \"Flexible and durable cones designed for football drills and agility training. Ideal for coaches and players of all levels.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/7d3c9b1e-a234-4e7e-baad-f892c32a4470.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sports",
+              "host": [
+                "{{base_url}}sports"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all-sport",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://sport-api.eunglyzhia.com/api/v1/sports",
+              "protocol": "https",
+              "host": [
+                "sport-api",
+                "eunglyzhia",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "sports"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-sport-by-uuid",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n"
+            },
+            "url": {
+              "raw": "{{base_url}}sports/{{uuid}}",
+              "host": [
+                "{{base_url}}sports"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-sport",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sports/{{uuid}}",
+              "host": [
+                "{{base_url}}sports"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n"
+            },
+            "url": {
+              "raw": "{{base_url}}sports/{{uuid}}",
+              "host": [
+                "{{base_url}}sports"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "create-comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventUuid\": \"7bf91bc9-e10d-4902-90e7-911c1faec3a7\",\n  \"comment\": \"This was an exciting match! Really enjoyed the last-minute goal.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}comments",
+              "host": [
+                "{{base_url}}comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all-comment",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}comments",
+              "host": [
+                "{{base_url}}comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-comment-by-event-uuid",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n"
+            },
+            "url": {
+              "raw": "{{base_url}}comments/events/{{uuid}}",
+              "host": [
+                "{{base_url}}comments"
+              ],
+              "path": [
+                "events",
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n"
+            },
+            "url": {
+              "raw": "{{base_url}}comments/{{uuid}}",
+              "host": [
+                "{{base_url}}comments"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-sport",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sports/{{uuid}}",
+              "host": [
+                "{{base_url}}sports"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Event",
+      "item": [
+        {
+          "name": "create-event",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"City Riverside Footer Court\",\n  \"description\": \"An open-air footer court located along the riverside, featuring smooth flooring, lighting for night games, and shaded seating areas for spectators.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/93b0df45-78a2-4f4b-98e2-bb7a673b23af.webp\"\n  ],\n  \"locationName\": \"Phnom Penh Riverside Sports Complex\",\n  \"latitude\": 11.572356,\n  \"longitude\": 104.923874,\n  \"categoryName\": \"Football\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}events",
+              "host": [
+                "{{base_url}}events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-all-events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}events",
+              "host": [
+                "{{base_url}}events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-event-by-uuid",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n"
+            },
+            "url": {
+              "raw": "{{base_url}}events/{{uuid}}",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-event",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football Training Ground\",\n  \"description\": \"A well maintained outdoor football ground equipped with floodlights, changing rooms, and synthetic turf for both day and night matches.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/62186125-29ef-4d0e-b714-4412f581ef92.webp\"\n  ],\n  \"locationName\": \"Phnom Penh National Stadium\",\n  \"latitude\": 11.567089,\n  \"longitude\": 104.910151\n}\n\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}events/{{uuid}}",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-event",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premier League Ball\",\n  \"description\": \"High-quality football used in professional Premier League matches. Durable and suitable for all weather condition.\",\n  \"imageUrls\": [\n    \"https://sport-hub.eunglyzhia.social/images/8c5422a8-5da9-4eb4-abd6-20f821b43367.webp\"\n  ],\n  \"categoryName\": \"Football\"\n}\n"
+            },
+            "url": {
+              "raw": "{{base_url}}events/{{uuid}}",
+              "host": [
+                "{{base_url}}events"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sport-Category",
+      "item": [
+        {
+          "name": "create-sport-category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard-size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories",
+              "host": [
+                "{{base_url}}sport_categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-all-sport-categories",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories",
+              "host": [
+                "{{base_url}}sport_categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-sport-category-by-uuid",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories/{{uuid}}",
+              "host": [
+                "{{base_url}}sport_categories"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-sport-category",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories/{{uuid}}",
+              "host": [
+                "{{base_url}}sport_categories"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-sport-categories",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories/{{uuid}}",
+              "host": [
+                "{{base_url}}sport_categories"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Category",
+      "item": [
+        {
+          "name": "create-category",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard-size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories",
+              "host": [
+                "{{base_url}}sport_categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-all-categories",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories",
+              "host": [
+                "{{base_url}}sport_categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-sport-category-by-uuid",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories/{{uuid}}",
+              "host": [
+                "{{base_url}}sport_categories"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-sport-category",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories/{{uuid}}",
+              "host": [
+                "{{base_url}}sport_categories"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-sport-categories",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}sport_categories/{{uuid}}",
+              "host": [
+                "{{base_url}}sport_categories"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Favorite",
+      "item": [
+        {
+          "name": "create-favorite",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sportUuid\": \"7fbab651-d332-460b-a834-616d52f82eac\" ,\n  \"eventUuid\": \"\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/favorites",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "favorites"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-all-fav",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}favorites",
+              "host": [
+                "{{base_url}}favorites"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-favorite",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Football\",\n  \"description\": \"A standard size football suitable for both training and professional matches. Made with durable materials for long-lasting performance.\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}favorite/{{uuid}}",
+              "host": [
+                "{{base_url}}favorite"
+              ],
+              "path": [
+                "{{uuid}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "upload-file",
+      "item": [
+        {
+          "name": "upload-image",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "3b723ca8-d380-4ee0-aeab-1e6befbf2eff",
+                  "src": "/Users/eunglyzhia/Downloads/most-expensive-football-training-grounds.webp"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}upload",
+              "host": [
+                "{{base_url}}upload"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "upload-image",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "uuid": "3b723ca8-d380-4ee0-aeab-1e6befbf2eff",
+                      "src": [
+                        "/Users/eunglyzhia/Downloads/Introduction to JavaScript (5).png"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}upload",
+                  "host": [
+                    "{{base_url}}upload"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "nginx/1.18.0 (Ubuntu)"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 04:10:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Method"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Access-Control-Request-Headers"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": {\n        \"code\": 500,\n        \"reason\": \"File upload failed\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "upload-multiple-image",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "type": "file",
+                  "uuid": "3b723ca8-d380-4ee0-aeab-1e6befbf2eff",
+                  "value": null
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}upload",
+              "host": [
+                "{{base_url}}upload"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    }
+  ]
+}
