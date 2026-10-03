@@ -10,11 +10,27 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { SITE_NAME } from '@/lib/config'
 
+const siteDescription = 'Browse sports, discover venues and events, and save the ones you like.'
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(siteUrl),
   title: { default: `${SITE_NAME}: sports, venues and events`, template: `%s | ${SITE_NAME}` },
-  description: 'Browse sports, discover venues and events, and save the ones you like.',
-  openGraph: { siteName: SITE_NAME, type: 'website' },
+  description: siteDescription,
+  openGraph: {
+    title: `${SITE_NAME}: sports, venues and events`,
+    description: siteDescription,
+    siteName: SITE_NAME,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME}: sports, venues and events`,
+    description: siteDescription,
+    images: ['./public/images.png'],
+  },
 }
 
 export const viewport: Viewport = { themeColor: '#0d1117' }

@@ -17,7 +17,7 @@ Production: `npm run build && npm start`. Type check: `npm run typecheck`. Requi
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `API_BASE_URL` | `https://sport-api.eunglyzhia.com/api/v1` | Upstream Sport API (server only) |
-| `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Base URL for metadata / Open Graph |
+| `NEXT_PUBLIC_SITE_URL` | Vercel deployment URL, otherwise `http://localhost:3000` | Base URL for metadata / Open Graph; set this for a custom domain |
 | `REVALIDATE_SECONDS` | `60` | How long API data stays cached |
 | `IMAGE_HOSTS` | `sport-hub.eunglyzhia.social,*.eunglyzhia.social,*.eunglyzhia.com` | Hosts optimized by `next/image` |
 
