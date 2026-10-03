@@ -14,6 +14,12 @@ const siteDescription = 'Browse sports, discover venues and events, and save the
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+const thumbnailImage = {
+  url: '/image.png',
+  width: 866,
+  height: 650,
+  alt: `${SITE_NAME} logo`,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,13 +30,18 @@ export const metadata: Metadata = {
     description: siteDescription,
     siteName: SITE_NAME,
     type: 'website',
-    images: ['/image.png'],
+    images: [thumbnailImage],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME}: sports, venues and events`,
     description: siteDescription,
-    images: ['/image.png'],
+    images: [thumbnailImage],
+  },
+  other: {
+    'telegram:title': `${SITE_NAME}: sports, venues and events`,
+    'telegram:description': siteDescription,
+    'telegram:image': '/image.png',
   },
 }
 
