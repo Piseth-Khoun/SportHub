@@ -13,7 +13,7 @@ import { SITE_NAME } from '@/lib/config'
 const siteDescription = 'Browse sports, discover venues and events, and save the ones you like.'
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://sport-hub.vercel.app')
 const thumbnailImage = {
   url: '/image.png',
   width: 866,
