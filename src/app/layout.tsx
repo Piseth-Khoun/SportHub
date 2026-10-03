@@ -24,12 +24,13 @@ export const metadata: Metadata = {
     description: siteDescription,
     siteName: SITE_NAME,
     type: 'website',
+    images: ['/image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME}: sports, venues and events`,
     description: siteDescription,
-    images: ['./public/images.png'],
+    images: ['/image.png'],
   },
 }
 
